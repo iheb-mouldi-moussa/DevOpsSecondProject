@@ -1,0 +1,13 @@
+#Compiled Files
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock.info
+*.terraform.lock.hcl
+*.tfvars
+
+
+
+
+### Directories
+.terraform/
+.idea/
