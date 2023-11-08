@@ -1,10 +1,10 @@
-data "aws_ami" "instance" {
+/*data "aws_ami" "instance" {
   most_recent = "true"
-  owners = ["amazon"]
+  owners = ["ubuntu"]
 
   filter {
     name   = "name"
-    values = ["amzn2-ami-kernel-5.10-hvm-*-x86_64-gp2"]
+    values = [""]
   }
 
   filter {
@@ -20,7 +20,7 @@ data "aws_ami" "instance" {
     values = ["x86_64"]
   }
 }
-
+*/
 resource "aws_security_group" "SG-Servers" {
   vpc_id = aws_vpc.main_vpc.id
   name = "serversSG"
@@ -53,7 +53,7 @@ resource "aws_key_pair" "ServersKey" {
 }
 
 resource "aws_instance" "Server" {
-  ami = data.aws_ami.instance.id
+  ami = "ami-00983e8a26e4c9bd9"
   instance_type = "t2.micro"
   key_name = aws_key_pair.ServersKey.key_name
   security_groups = [aws_security_group.SG-Servers.id]

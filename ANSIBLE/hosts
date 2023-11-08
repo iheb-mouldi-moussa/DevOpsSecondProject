@@ -1,0 +1,13 @@
+[jenkins-master]
+10.0.1.199
+
+[jenkins-master:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=/home/ubuntu/KEYS/serverkey
+
+[jenkins-slave]
+10.0.1.183
+
+[jenkins-slave:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=/home/ubuntu/KEYS/serverkey

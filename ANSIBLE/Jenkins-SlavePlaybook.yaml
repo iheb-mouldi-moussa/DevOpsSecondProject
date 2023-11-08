@@ -1,0 +1,20 @@
+---
+- name: Setup Jenkins Slave Node
+  hosts: jenkins-slave
+  become: yes
+  tasks:
+    - name: install java
+      apt:
+        name: openjdk-17-jre
+        state: present
+        update_cache: yes
+
+    - name: Get Maven file from url
+      get_url:
+        url: https://dlcdn.apache.org/maven/maven-3/3.9.5/binaries/apache-maven-3.9.5-bin.tar.gz
+        dest: /opt/
+
+    - name: Untar the file
+      unarchive:
+        src: /opt/apache-maven-3.9.5-bin.tar.gz
+        dst: /opt/maven
