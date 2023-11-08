@@ -57,7 +57,7 @@ resource "aws_instance" "Server" {
   instance_type = "t2.micro"
   key_name = aws_key_pair.ServersKey.key_name
   security_groups = [aws_security_group.SG-Servers.id]
-  subnet_id = aws_subnet.main_private_subnet.id
+  subnet_id = aws_subnet.main_public_subnet.id
   vpc_security_group_ids = [aws_security_group.SG-Servers.id]
   for_each = toset(["Jenkins_Master", "Ansible_Server", "Jenkins_Slave"])
   tags = {
