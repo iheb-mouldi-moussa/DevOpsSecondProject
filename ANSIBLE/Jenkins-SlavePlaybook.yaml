@@ -17,4 +17,5 @@
     - name: Untar the file
       unarchive:
         src: /opt/apache-maven-3.9.5-bin.tar.gz
-        dst: /opt/maven
+        dest: /opt/
+        remote_src: yes
