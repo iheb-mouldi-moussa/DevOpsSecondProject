@@ -59,14 +59,13 @@ pipeline{
         {
             steps
             {
+                echo '####################### PUSHING ARTIFACT STARTING ########################3'
                 script
                 {
                     rtServer (
                      id: 'maven-server',
                      url: 'https://husseinaon.jfrog.io/artifactory',
-                         // If you're using username and password:
-                     username: 'user',
-                     password: 'password',
+                     credentialsId: 'Jenkins-To-JFrog'
                      // If Jenkins is configured to use an http proxy, you can bypass the proxy when using this Artifactory server:
                      bypassProxy: true,
                      // Configure the connection timeout (in seconds).
@@ -93,6 +92,7 @@ pipeline{
                         buildNumber: '42'
                         )
                 }
+                echo '################ PUSHING ARTIFACTS ENDED ##############################'
             }
         }
 
