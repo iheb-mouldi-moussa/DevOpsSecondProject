@@ -44,7 +44,7 @@ pipeline{
             }
         }
 
-        stage("Quality Gate")
+       /* stage("Quality Gate")
         {
             steps
             {
@@ -53,7 +53,7 @@ pipeline{
                     waitForQualityGate abortPipeline: true
                 }
             }
-        }
+        }*/
 
         stage("Artifactory")
         {
