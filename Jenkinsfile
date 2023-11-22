@@ -65,7 +65,7 @@ pipeline{
                     rtServer (
                      id: 'maven-server',
                      url: 'https://husseinaon.jfrog.io/artifactory',
-                     credentialsId: 'Jenkins-To-JFrog'
+                     credentialsId: 'Jenkins-To-JFrog',
                      // If Jenkins is configured to use an http proxy, you can bypass the proxy when using this Artifactory server:
                      bypassProxy: true,
                      // Configure the connection timeout (in seconds).
