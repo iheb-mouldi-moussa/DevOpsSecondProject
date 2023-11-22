@@ -37,7 +37,8 @@ pipeline{
                 withSonarQubeEnv('sonarqube-server')
                 {
                     sh '${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=iheb-mouldi-moussa_DevOpsSecondProject \
-                    -Dsonar.projectName=DevOpsSecondProject'
+                    -Dsonar.projectName=DevOpsSecondProject \
+                    -Dsonar.organization=iheb-mouldi-moussa'
                 }
             }
         }
