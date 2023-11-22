@@ -55,7 +55,30 @@ pipeline{
             }
         }*/
 
-        stage("Artifactory")
+
+        stage(Artifactory)
+        {
+            steps
+            {
+
+                echo '####################### PUSHING ARTIFACT STARTING ########################3'
+                script
+                {
+                    def server = Artifactory.newServer url: 'https://husseinaon.jfrog.io/artifactory', credentialsId: 'Jenkins-To-JFrog'
+                    def uploadSpec = """{
+                      "files": [
+                        {
+                          "pattern": "com/valaxy/demo-workshop/2.1.2/(*)",
+                          "target": "libs-release-local/"
+                          "exclusions": [ "*.sha1", "*.md5"]
+                        }
+                     ]
+                    }"""
+                }
+                echo '####################### PUSHING ARTIFACT ENDING ########################3'
+            }
+        }
+        /*stage("Artifactory")
         {
             steps
             {
@@ -87,7 +110,7 @@ pipeline{
 
                 echo '################ PUSHING ARTIFACTS ENDED ##############################'
             }
-        }
+        }*/
 
 
     }
