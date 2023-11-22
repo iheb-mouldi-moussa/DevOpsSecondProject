@@ -60,8 +60,6 @@ pipeline{
             steps
             {
                 echo '####################### PUSHING ARTIFACT STARTING ########################3'
-                script
-                {
                     rtServer (
                      id: 'maven-server',
                      url: 'https://husseinaon.jfrog.io/artifactory',
@@ -90,8 +88,8 @@ pipeline{
                         // the Jenkins job name and number).
                         buildName: 'holyFrog',
                         buildNumber: '42'
-                        )
-                }
+                    )
+
                 echo '################ PUSHING ARTIFACTS ENDED ##############################'
             }
         }
