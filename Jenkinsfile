@@ -25,5 +25,23 @@ pipeline{
                 echo '############## UNIT TEST FINISHED ############'
             }
         }
+
+        stage(̂"SonarQube Analysis")
+        {
+            environment
+            {
+                scannerHome = tool 'sonarqube-scanner'
+            }
+            steps
+            {
+                withSonarQubeEnv('sonarqube-server')
+                {
+                    sh '${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=iheb-mouldi-moussa_DevOpsSecondProject \
+                    -Dsonar.projectName=DevOpsSecondProject'
+                }
+            }
+        }
+
+
     }
 }
