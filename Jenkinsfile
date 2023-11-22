@@ -38,7 +38,8 @@ pipeline{
                 {
                     sh '${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=iheb-mouldi-moussa_DevOpsSecondProject \
                     -Dsonar.projectName=DevOpsSecondProject \
-                    -Dsonar.organization=iheb-mouldi-moussa'
+                    -Dsonar.organization=iheb-mouldi-moussa \
+                    -Dsonar.java.binaries=target/classes'
                 }
             }
         }
