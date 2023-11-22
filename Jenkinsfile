@@ -26,7 +26,7 @@ pipeline{
             }
         }
 
-        stage(̂"SonarQube Analysis")
+        stage("SonarQube Analysis")
         {
             environment
             {
