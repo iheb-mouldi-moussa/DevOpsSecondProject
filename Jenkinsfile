@@ -77,7 +77,7 @@ pipeline{
                               "files": [
                                 {
                                   "pattern": "/home/ubuntu/jenkins/workspace/test-multi-branch_master/jarstaging/com/valaxy/demo-workshop/2.1.2",
-                                  "target": "libs-release-local/"
+                                  "target": "libs-release-local"
                                 }
                              ]
                         }''',
