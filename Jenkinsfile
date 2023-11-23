@@ -74,7 +74,7 @@ pipeline{
                         }
                      ]
                     }"""
-                    server.upload spec: uploadSpec
+                    server.upload(uploadSpec)
 
                 }
                 echo '####################### PUSHING ARTIFACT ENDING ########################3'
