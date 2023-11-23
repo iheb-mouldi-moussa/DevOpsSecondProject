@@ -69,7 +69,7 @@ pipeline{
                       "files": [
                         {
                           "pattern": "com/valaxy/demo-workshop/2.1.2/(*)",
-                          "target": "maven-libs-release/",
+                          "target": "maven-libs-release-local/",
                           "exclusions": [ "*.sha1", "*.md5"]
                         }
                      ]
